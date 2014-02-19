@@ -1,44 +1,97 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+  </head>
+  <body data-spy="scroll" data-offset="60" data-target=".navbar-fixed-top" id="home">
+    <div class="navbar navbar-rsr-top navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand navbar-logo" href="#top">
+            <img src="/img/logo.png">
+          </a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#first-street">First Street</a></li>
+            <li><a href="#community">Community</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+    <div id="main" class="container">
+      <div id="map-pusher"></div>
+      <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
 
-    </head>
-    <body>
-
-        <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
-          </div>
-
+      <div class="row">
+        <div class="col-md-8">
           {{ content }}
-
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Your Name<br />
-                What You Are<br />
-                info@renostartuprow.com
-              </p>
-            </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/startuprow">github.com/startuprow</a><br />
-                <a href="https://twitter.com/renostartuprow">twitter.com/startuprow</a><br />
-              </p>
-            </div>
+        </div>
+        <div class="col-md-4">
+          <h3 class="hidden-lg hidden-md">Social Media</h3>
+          <div id="timeline" data-spy="affix" data-offset-top="155">
+            <a class="twitter-timeline" href="https://twitter.com/startuprow/first-street" data-widget-id="435862987169992704">Tweets from Reno Startup Row</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
           </div>
         </div>
+      </div>
+    </div> <!-- .container -->
 
-    </body>
+    <nav class="navbar navbar-rsr-bottom" role="navigation">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Get in touch</h4>
+            <p><a href="https://twitter.com/startuprow"><i class="fa fa-twitter fa-fw"></i> tweet us</a></p>
+            <p><a href="mailto:admin@renostartuprow.com"><i class="fa fa-envelope fa-fw"></i> contact us</a></p>
+            <p><a href="https://github.com/startuprow"><i class="fa fa-github fa-fw"></i> fork us</p>
+          </div>
+          <div class="col-md-6 text-right">
+            <h4>Our friends</h4>
+            <p><a href="http://edawn.org"><i class="fa fa-globe fa-fw"></i> EDAWN</a></p>
+            <p><a href="http://reno.sites.1millioncups.com/"><i class="fa fa-globe fa-fw"></i> 1 Million Cups Reno</a></p>
+            <p><a href="http://www.hubcoffeeroasters.com/riverside-drive"><i class="fa fa-coffee fa-fw"></i> Hub Roasters</a></p>
+          </div>
+      </div>
+    </nav>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      // function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      // e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      // e.src='//www.google-analytics.com/analytics.js';
+      // r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      // ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+  </body>
 </html>

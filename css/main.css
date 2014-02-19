@@ -1,160 +1,376 @@
-/*****************************************************************************/
-/*
-/* Common
-/*
-/*****************************************************************************/
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
 
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
 }
 
-html, body { height: 100%; }
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
 
 body {
-  background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
-  text-align: center;
+  background-color: #f9f9f9;
+  background-image: url(/img/map-body.png);
+  background-position: top center;
+  background-repeat: no-repeat;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }
-
-h1 { margin-bottom: 1em; }
-p { margin: 1em 0; }
-
-a         { color: #00a; }
-a:hover   { color: #000; }
-a:visited { color: #a0a; }
-
-/*****************************************************************************/
-/*
-/* Home
-/*
-/*****************************************************************************/
-.posts {
-  list-style-type: none;
-  margin-bottom: 2em;
+#main {
+  background-image: url(/img/map-main.png);
+  background-position: top center;
+  background-repeat: no-repeat;
 }
 
-.posts li {
-  line-height: 1.75em;
+#map-pusher {
+  height: 220px;
 }
 
-.posts span {
-  color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
-  font-size: 80%;
+#timeline.affix {
+  top: 65px;
 }
 
-/*****************************************************************************/
-/*
-/* Site
-/*
-/*****************************************************************************/
-
-.site {
-  font-size: 115%;
-  text-align: justify;
-  width: 42em;
-  margin: 3em auto 2em;
-  line-height: 1.5em;
+@media (max-width: 992px) {
+  #timeline.affix {
+    position: static;
+    top: 0;
+  }
 }
 
-.header a {
+.navbar-logo {
+  padding: 5px 0 0 15px;
+}
+
+.navbar-rsr-top {
+  background-color: white;
+  background-color: rgba(255,255,255,0.9);
+  border-bottom: 4px solid #f15b4e;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.15);
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.15);
+}
+
+.navbar-rsr-top .navbar-nav>li>a {
+  color: #777;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+  background-color: #eee;
+  background-color: rgba(198,198,198,0.3);
+}
+
+.navbar-rsr-top .navbar-nav>.active>a,
+.navbar-rsr-top .navbar-nav>.active>a:hover,
+.navbar-rsr-top .navbar-nav>.active>a:focus {
+  color: #555;
+  background-color: #d6d6d6;
+  background-color: rgba(119,119,119,0.3);
+}
+
+.navbar-rsr-top .navbar-toggle {
+    border-color: #DDD;
+}
+
+.navbar-rsr-top .navbar-toggle .icon-bar {
+    background-color: #888;
+}
+
+.navbar-rsr-bottom {
+  color: #f3f3f4;
+  background-color: #4a4a4c;
+  border-width: 0;
+  border-top: 4px solid #f15b4e;
+  -webkit-box-shadow: inset 0px 6px 5px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 6px 5px -5px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 6px 5px -5px rgba(0,0,0,0.75);
+  margin: 0;
+  border-radius: 0;
+}
+
+.navbar-rsr-bottom .container {
+  margin-top: 10px;
+}
+
+.navbar-rsr-bottom .container a {
+  color: #AAA;
+}
+
+.company-profile h3 {
+  margin-top: 0;
+}
+
+.company-profile img {
+  margin-right: 15px;
+}
+
+.company-profile .contact,
+.company-profile .contact a {
+  color: #f15b4e;
   font-weight: bold;
-  text-decoration: none;
 }
 
-.title {
-  display: inline-block;
-  margin-bottom: 2em;
+.company-profile .contact.address {
+  font-weight: normal;
+  color: #f7941e;
+  line-height: 1.9em;
 }
 
-.title a {
-  color: #a00;
+/* =========================================================================
+   Callouts
+   ========================================================================= */
+
+/* Base styles (regardless of theme) */
+.bs-callout {
+  margin: 20px 0;
+  padding: 15px 30px 15px 15px;
+  border-left: 5px solid #eee;
 }
 
-.title a:hover {
-  color: #000;
+.bs-callout h4 {
+  margin-top: 0;
 }
 
-.header a.extra {
-  color: #aaa;
-  margin-left: 1em;
+.bs-callout p:last-child {
+  margin-bottom: 0;
 }
 
-.header a.extra:hover {
-  color: #000;
+.bs-callout code,
+.bs-callout .highlight {
+  background-color: #fff;
 }
 
-.meta {
-  color: #aaa;
+/* Themes for different contexts */
+.bs-callout-danger {
+  background-color: #fcf2f2;
+  border-color: #dFb5b4;
 }
 
-.footer {
-  font-size: 80%;
-  color: #666;
-  border-top: 4px solid #eee;
-  margin-top: 2em;
-  overflow: hidden;
+.bs-callout-danger h4 {
+  color: #B94A48;
 }
 
-.footer .contact {
-  float: left;
-  margin-right: 3em;
+.bs-callout-warning {
+  background-color: #fefbed;
+  border-color: #f1e7bc;
 }
 
-.footer .contact a {
-  color: #8085C1;
+.bs-callout-warning h4 {
+  color: #C09853;
 }
 
-.footer .rss {
-  margin-top: 1.1em;
-  margin-right: -.2em;
-  float: right;
+.bs-callout-info {
+  background-color: #f0f7fd;
+  border-color: #d0e3f0;
 }
 
-.footer .rss img {
-  border: 0;
+.bs-callout-info h4 {
+  color: #3A87AD;
 }
 
-/*****************************************************************************/
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
 /*
-/* Posts
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
 /*
-/*****************************************************************************/
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
 
-/* standard */
-.post pre {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .4em;
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }
 
-.post ul, .post ol {
-  margin-left: 1.35em;
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
 }
 
-.post code {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .2em;
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
 }
 
-.post pre code {
-  border: none;
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
 }
 
-/* terminal */
-.post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #FFF;
+.clearfix:after {
+    clear: both;
 }
 
-.post pre.terminal code {
-  background-color: #333;
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
 }
