@@ -162,6 +162,11 @@ body {
   color: #AAA;
 }
 
+.company-profile {
+  padding-left: 158px;
+  min-height: 158px;
+}
+
 .company-profile h3 {
   margin-top: 0;
 }
@@ -179,8 +184,8 @@ body {
 }
 
 .company-logo {
-  position: relative;
-  margin-right: 15px;
+  position: absolute;
+  left: 30px;
 }
 
 /* =========================================================================
