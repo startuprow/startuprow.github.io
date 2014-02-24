@@ -166,10 +166,6 @@ body {
   margin-top: 0;
 }
 
-.company-profile img {
-  margin-right: 15px;
-}
-
 .company-profile .contact,
 .company-profile .contact a {
   color: #f15b4e;
@@ -180,6 +176,11 @@ body {
   font-weight: normal;
   color: #f7941e;
   line-height: 1.9em;
+}
+
+.company-logo {
+  position: relative;
+  margin-right: 15px;
 }
 
 /* =========================================================================
