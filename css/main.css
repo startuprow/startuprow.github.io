@@ -212,6 +212,10 @@ body {
   background-color: #fff;
 }
 
+.bs-callout img.pull-left {
+  margin-right: 10px;
+}
+
 /* Themes for different contexts */
 .bs-callout-danger {
   background-color: #fcf2f2;
