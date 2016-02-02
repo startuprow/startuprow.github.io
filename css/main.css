@@ -186,7 +186,10 @@ body {
 .company-logo {
   position: absolute;
   left: 30px;
-  max-width: 120px;
+}
+
+.company-logo img {
+    max-width: 120px;
 }
 
 /* =========================================================================
